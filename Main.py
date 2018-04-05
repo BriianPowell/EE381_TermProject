@@ -24,7 +24,7 @@ print("Initial Matrix:")
 print(Matrix)
 
 #Days
-while (iteration < 50):
+while (iteration < 25):
     #People
     for count in range(people):
         Matrix[count] -= 1
@@ -39,7 +39,7 @@ print("\nCompleted Iterations:", iteration)
 print("Result Matrix:")
 print(Matrix)
 
-#printing sorted result table from high to low
+#printing sorted result table from high to low-
 counter = collections.Counter(Matrix)
 print("\n[Sorted Result Table]")
 print("Amount" + "  | " + "Frequency")
@@ -49,8 +49,9 @@ for key, value in sorted(counter.items(), reverse=True):
 
 #creating and showing histogram
 plt.title('Money Distribution After 50 Days')
-plt.xlabel("Money Owned")
-plt.ylabel("Number of People")
-plt.hist(Matrix, bins=range(min(Matrix), max(Matrix) + 1, 1),edgecolor='black')
+plt.xlabel("Dollars")
+plt.ylabel("People")
+plt.plot(Matrix)
+plt.axis([0, 50, 25, 75])
 plt.show()
 
