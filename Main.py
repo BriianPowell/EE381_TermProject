@@ -16,6 +16,9 @@ amount = 50
 iteration = 0
 count = 0
 
+#figure definitions
+fig = plt.figure()
+
 #initialize matrix of 50 people to $50 each
 Matrix = [amount for x in range(people)]
 
@@ -24,15 +27,24 @@ print("Initial Matrix:")
 print(Matrix)
 
 #Days
-while (iteration < 25):
+while (iteration < 50):
     #People
     for count in range(people):
         Matrix[count] -= 1
         Matrix[rand.randint(0,49)] += 1
         count +=1
+    #print plot after every day
+    ax = plt.subplot(5, 10, iteration+1)
+    ax.plot(Matrix)
+    ax.set_xlim(0,50)
+    ax.set_ylim(25,75)
+    ax.set_title(iteration)
     #iterate days after everyone has given their dollar
     iteration +=1
     count = 0
+
+#print plt object
+plt.show()
 
 #printing completed iterations and resulting matrix
 print("\nCompleted Iterations:", iteration)
@@ -47,11 +59,4 @@ print("===================")
 for key, value in sorted(counter.items(), reverse=True):
     print(key, "\t|\t", value)
 
-#creating and showing histogram
-plt.title('Money Distribution After 50 Days')
-plt.xlabel("Dollars")
-plt.ylabel("People")
-plt.plot(Matrix)
-plt.axis([0, 50, 25, 75])
-plt.show()
 
