@@ -1,5 +1,5 @@
 ## EE381_Term_Project
-Term Project for EE281 at LBSU with Chaw-Long Chu
+Term Project for EE381 at LBSU with Chaw-Long Chu
 
 ### Topic: Who could be rich?
 A group of 50 people and each one has 50 dollars to start the following activity:
